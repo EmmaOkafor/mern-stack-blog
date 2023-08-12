@@ -11,7 +11,7 @@ export default function RegisterPage() {
       const response = await fetch('http://localhost:4000/register', {
         method: 'POST',
         body: JSON.stringify({ username, email, password }),
-        headers: { 'Content-Type': 'application/json' }, // Fix typo: 'application.json' -> 'application/json'
+        headers: { 'Content-Type': 'application/json' },
       });
 
       if (response.status === 200) {
@@ -26,7 +26,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <div>
+    <>
       <div className='wrapper register row '>
         <div className="col-sm-12">
           <form onSubmit={register} className='bg-white'>
@@ -56,6 +56,6 @@ export default function RegisterPage() {
           </form>
         </div>
       </div>
-    </div>
+    </>
   );
 }
